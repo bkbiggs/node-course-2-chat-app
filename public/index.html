@@ -10,9 +10,11 @@
 
   <script src="/socket.io/socket.io.js"></script>
   <script>
+    var x = 0;
     var socket = io();
     socket.on('connect', () => {
-      console.log('Connected to server');
+      console.log(`Connected to server x=${x}`);
+      x = x + 1;
     });
 
     socket.on('disconnect', () => {
